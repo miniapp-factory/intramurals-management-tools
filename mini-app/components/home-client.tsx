@@ -1,7 +1,6 @@
 'use client';
 import { useState } from "react";
 import type { Match } from "@/components/leaderboard";
-import HomeClient from "@/components/home-client";
 import { description, title } from "@/lib/metadata";
 
 export default function HomeClient() {

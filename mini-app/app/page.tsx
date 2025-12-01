@@ -16,8 +16,8 @@ export default function Home() {
     <main className="flex flex-col gap-6 place-items-center place-content-center px-4 grow">
       <h1 className="text-3xl font-bold text-red-600">{title}</h1>
       <p className="text-muted-foreground">{description}</p>
-      <EventForm />
-      <ScoreInput setMatches={setMatches} />
+      <EventForm onSaveEvent={(event) => console.log(event)} />
+      <ScoreInput setMatches={(match) => setMatches(prev => [...prev, match])} />
       <Leaderboard matches={matches} />
     </main>
   );

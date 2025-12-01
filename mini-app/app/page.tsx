@@ -1,4 +1,3 @@
-"use client";
 import { description, title } from "@/lib/metadata";
 import { generateMetadata } from "@/lib/farcaster-embed";
 import EventForm from "@/components/event-form";
@@ -12,13 +11,5 @@ export { generateMetadata };
 export default function Home() {
   const [matches, setMatches] = useState<Match[]>([]);
   // NEVER write anything here, only use this page to import components
-  return (
-    <main className="flex flex-col gap-6 place-items-center place-content-center px-4 grow">
-      <h1 className="text-3xl font-bold text-red-600">{title}</h1>
-      <p className="text-muted-foreground">{description}</p>
-      <EventForm onSaveEvent={(event) => console.log(event)} />
-      <ScoreInput setMatches={(match) => setMatches(prev => [...prev, match])} />
-      <Leaderboard matches={matches} />
-    </main>
-  );
+  return <HomeClient />;
 }

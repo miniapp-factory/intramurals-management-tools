@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 
-export default function EventForm() {
+export default function EventForm({ onSaveEvent }: { onSaveEvent: (event: { name: string; date: string; time: string; location: string }) => void }) {
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -10,7 +10,7 @@ export default function EventForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real app, you would send this data to a backend or store it locally
-    console.log({ name, date, time, location });
+    onSaveEvent({ name, date, time, location });
   };
 
   return (

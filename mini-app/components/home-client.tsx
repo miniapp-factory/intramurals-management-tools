@@ -16,7 +16,7 @@ export default function HomeClient() {
     <main className="flex flex-col gap-6 place-items-center place-content-center px-4 grow">
       <h1 className="text-3xl font-bold text-red-600">{title}</h1>
       <p className="text-muted-foreground">{description}</p>
-      <EventForm onSaveEvent={setEvents} />
+      <EventForm onSaveEvent={(event) => setEvents(prev => [...prev, event])} />
       <ScoreInput setMatches={(match) => setMatches(prev => [...prev, match])} />
       <Leaderboard matches={matches} />
       <ul className="mt-4 space-y-1">

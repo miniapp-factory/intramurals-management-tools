@@ -1,7 +1,4 @@
 'use client';
-import { useState } from "react";
-import type { Match } from "@/components/leaderboard";
-import { description, title } from "@/lib/metadata";
 
 import { useState } from "react";
 import type { Match } from "@/components/leaderboard";

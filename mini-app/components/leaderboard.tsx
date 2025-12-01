@@ -1,12 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
 
-interface Match {
-  teamA: string;
-  teamB: string;
-  scoreA: number;
-  scoreB: number;
-}
 
 export type Match = {
   teamA: string;

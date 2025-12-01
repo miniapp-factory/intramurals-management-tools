@@ -8,8 +8,14 @@ interface Match {
   scoreB: number;
 }
 
-export default function Leaderboard() {
-  const [matches, setMatches] = useState<Match[]>([]);
+export type Match = {
+  teamA: string;
+  teamB: string;
+  scoreA: number;
+  scoreB: number;
+};
+
+export default function Leaderboard({ matches }: { matches: Match[] }) {
   const [standings, setStandings] = useState<Record<string, number>>({});
 
   useEffect(() => {

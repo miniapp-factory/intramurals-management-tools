@@ -1,7 +1,9 @@
 'use client';
 import { useState } from "react";
 
-export default function ScoreInput() {
+import { Match } from "@/components/leaderboard";
+
+export default function ScoreInput({ setMatches }: { setMatches: (m: Match) => void }) {
   const [teamA, setTeamA] = useState("");
   const [teamB, setTeamB] = useState("");
   const [scoreA, setScoreA] = useState("");
@@ -9,8 +11,18 @@ export default function ScoreInput() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you would update the leaderboard state or backend
-    console.log({ teamA, teamB, scoreA, scoreB });
+    const match: Match = {
+      teamA,
+      teamB,
+      scoreA: Number(scoreA),
+      scoreB: Number(scoreB),
+    };
+    setMatches(match);
+    // Reset form
+    setTeamA("");
+    setTeamB("");
+    setScoreA("");
+    setScoreB("");
   };
 
   return (

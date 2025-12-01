@@ -3,6 +3,13 @@ import { useState } from "react";
 import type { Match } from "@/components/leaderboard";
 import { description, title } from "@/lib/metadata";
 
+import { useState } from "react";
+import type { Match } from "@/components/leaderboard";
+import { description, title } from "@/lib/metadata";
+import EventForm from "@/components/event-form";
+import ScoreInput from "@/components/score-input";
+import Leaderboard from "@/components/leaderboard";
+
 export default function HomeClient() {
   const [matches, setMatches] = useState<Match[]>([]);
   return (
